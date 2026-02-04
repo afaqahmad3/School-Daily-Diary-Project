@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e9edf3;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+}
+
+.container {
+  max-width: 950px;
+  margin: 30px auto;
+}
+
+.input-box {
+  background: #f8f9fb;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dce1e7;
+  margin-bottom: 25px;
+}
+
+.input-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  font-size: 15px;
+  background: #0a5aa3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* DIARY */
+.diary {
+  background: white;
+  padding: 28px;
+  border-radius: 6px;
+  border: 1.5px solid #0a5aa3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.school-header {
+  text-align: center;
+  line-height: 1.02;
+}
+
+.school-header img {
+  height: 150px;
+  margin-bottom: 0px;
+}
+
+.school-header h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 42px;
+  margin: 2px 0;
+  letter-spacing: 0.5px;
+  color: #02325f;
+}
+
+.school-header h3 {
+  font-size: 30px;
+  margin: 3px 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.school-header p {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  margin: 0;
+}
+
+.diary-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #be4c00;
+  margin: 12px 0 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* INFO */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid #0a5aa3;
+  padding: 9px 10px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+th {
+  background: #0a5aa3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+table th:first-child,
+table td:first-child {
+  width: 180px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+}
+/* URDU */
+.urdu,
+.isl {
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  direction: rtl;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* NOTES */
+.notes {
+  margin-top: 16px;
+  padding-top: 10px;
+  margin-bottom: 16px;
+  border-top: 1px dashed #aaa;
+  font-size: 18px;
+}

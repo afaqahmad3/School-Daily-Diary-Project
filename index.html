@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peace Education System</title>
+
+  <!-- Image Export Library -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="input-box">
+    <h2>Daily Homework Diary</h2>
+
+    <label>Class</label>
+    <input type="text" id="classInput" placeholder="e.g. Class 5-A">
+
+    <label>English</label><input type="text" id="engInput">
+    <label>Math</label><input type="text" id="mathInput">
+    <label>Science</label><input type="text" id="sciInput">
+    <label>General Knowledge</label><input type="text" id="gkInput">
+    <label>Social Studies</label><input type="text" id="sstInput">
+    <label>اردو</label><input type="text" id="urduInput">
+    <label>اسلامیات</label><input type="text" id="islInput">
+
+    <label>Notes & Reminders</label>
+    <textarea id="notesInput"></textarea>
+
+    <button onclick="generateDiary()">Generate Diary</button>
+    <button onclick="downloadDiary()">Download</button>
+  </div>
+
+  <div class="diary" id="diary">
+
+    <div class="school-header">
+      <img src="image\logo.png">
+      <h1>PEACE School System</h1>
+      <h3>Ocean of Knowledge</h3>
+      <p>0323-7609572 | 0315-2739918</p>
+    </div>
+
+    <hr>
+
+    <!-- TITLE -->
+    <div class="diary-title">Daily Homework Diary</div>
+
+    <!-- INFO ROW -->
+    <div class="info-row">
+      <span><b>Class:</b> <span id="classOut"></span></span>
+      <span><b>Day:</b> <span id="day"></span></span>
+      <span><b>Date:</b> <span id="date"></span></span>
+    </div>
+
+    <!-- TABLE -->
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Homework</th>
+      </tr>
+      <tr><td>English</td><td id="eng"></td></tr>
+      <tr><td>Math</td><td id="math"></td></tr>
+      <tr><td>Science</td><td id="sci"></td></tr>
+      <tr><td>General Knowledge</td><td id="gk"></td></tr>
+      <tr><td>Social Studies</td><td id="sst"></td></tr>
+      <tr><td class="urdu">اردو</td><td class="urdu" id="urdu"></td></tr>
+      <tr><td class="urdu">اسلامیات</td><td class="urdu" id="isl"></td></tr>
+    </table>
+
+    <!-- NOTES -->
+    <div class="notes">
+      <b>Notes & Reminders</b>
+      <p id="notes"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
