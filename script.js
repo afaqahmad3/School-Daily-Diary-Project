@@ -35,7 +35,7 @@ function downloadDiary() {
 }
 async function sendWhatsApp() {
 
-  const phoneNumber = "923001234567"; // CHANGE THIS
+  const phoneNumber = "923443039918"; // CHANGE THIS
   const className = classInput.value || "Class";
   const message = `Daily Homework Diary for ${className}`;
 
@@ -50,7 +50,6 @@ async function sendWhatsApp() {
       files: [file],
     });
   } 
-  // ✅ FALLBACK (DESKTOP)
   else {
     // Download image
     const link = document.createElement("a");
@@ -63,3 +62,4 @@ async function sendWhatsApp() {
     window.open(url, "_blank");
   }
 }
+
