@@ -3,8 +3,6 @@
 }
 
 body {
-  margin: 0;
-  -webkit-text-size-adjust: 100%;
   background: #e9edf3;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: #222;
@@ -50,17 +48,10 @@ button {
   border: none;
   cursor: pointer;
 }
-.page{
-  display: flex;
-  justify-content: center;
-  overflow-x: auto;
-  padding: 12px;  
-}
+
 /* DIARY */
 .diary {
   background: white;
-  width: 794px;        /* A4 width @ 96dpi */
-  min-height: 1123px;
   padding: 28px;
   border-radius: 6px;
   border: 1.5px solid #0a5aa3;
@@ -114,7 +105,7 @@ button {
 .info-row {
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
@@ -129,14 +120,14 @@ table {
 th, td {
   border: 1px solid #0a5aa3;
   padding: 9px 10px;
-  font-size: 20px;
+  font-size: 22px;
   vertical-align: middle;
 }
 
 th {
   background: #0a5aa3;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -145,7 +136,7 @@ table td:first-child {
   width: 180px;
   font-weight: 600;
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
 }
 /* URDU */
 .urdu,
@@ -160,10 +151,7 @@ table td:first-child {
 .notes {
   margin-top: 16px;
   padding-top: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border-top: 1px dashed #aaa;
-  font-size: 20px;
+  font-size: 18px;
 }
-
-
-
