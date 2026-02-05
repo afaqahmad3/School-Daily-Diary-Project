@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  -webkit-text-size-adjust: 100%;
   background: #e9edf3;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: #222;
@@ -52,13 +53,14 @@ button {
 .page{
   display: flex;
   justify-content: center;
+  overflow-x: auto;
   padding: 12px;  
 }
 /* DIARY */
 .diary {
   background: white;
-  width: 100%;
-  max-width: 900px;
+  width: 794px;        /* A4 width @ 96dpi */
+  min-height: 1123px;
   padding: 28px;
   border-radius: 6px;
   border: 1.5px solid #0a5aa3;
@@ -162,5 +164,6 @@ table td:first-child {
   border-top: 1px dashed #aaa;
   font-size: 20px;
 }
+
 
 
