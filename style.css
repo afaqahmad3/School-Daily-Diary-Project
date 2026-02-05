@@ -151,7 +151,8 @@ table td:first-child {
 .notes {
   margin-top: 16px;
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-top: 1px dashed #aaa;
   font-size: 18px;
 }
+
