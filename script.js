@@ -33,26 +33,33 @@ function downloadDiary() {
     link.click();
   });
 }
-function sendWhatsApp() {
+async function sendWhatsApp() {
 
-  const phoneNumber = "923443039918"; // <-- CHANGE THIS
-
-  // Create message
+  const phoneNumber = "923001234567"; // CHANGE THIS
   const className = classInput.value || "Class";
   const message = `Daily Homework Diary for ${className}`;
 
-  // First download image
-  html2canvas(document.getElementById("diary")).then(canvas => {
+  const canvas = await html2canvas(document.getElementById("diary"));
+  const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+  const file = new File([blob], "daily-diary.png", { type: "image/png" });
 
+  // ✅ MOBILE SHARE (ATTACHES IMAGE)
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    await navigator.share({
+      text: message,
+      files: [file],
+    });
+  } 
+  // ✅ FALLBACK (DESKTOP)
+  else {
+    // Download image
     const link = document.createElement("a");
-    link.download = "daily-homework-diary.png";
     link.href = canvas.toDataURL("image/png");
+    link.download = "daily-diary.png";
     link.click();
 
-    setTimeout(() => {
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
-    }, 800);
-  });
+    // Open WhatsApp chat
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
 }
-
