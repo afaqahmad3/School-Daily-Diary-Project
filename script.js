@@ -33,3 +33,26 @@ function downloadDiary() {
     link.click();
   });
 }
+function sendWhatsApp() {
+
+  const phoneNumber = "923443039918"; // <-- CHANGE THIS
+
+  // Create message
+  const className = classInput.value || "Class";
+  const message = `Daily Homework Diary for ${className}`;
+
+  // First download image
+  html2canvas(document.getElementById("diary")).then(canvas => {
+
+    const link = document.createElement("a");
+    link.download = "daily-homework-diary.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+
+    setTimeout(() => {
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }, 800);
+  });
+}
+
