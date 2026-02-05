@@ -17,12 +17,6 @@ function generateDiary() {
 }
 
 
-/* SIGNATURE PREVIEW */
-signInput.onchange = e => {
-  const reader = new FileReader();
-  reader.onload = () => signPreview.src = reader.result;
-  reader.readAsDataURL(e.target.files[0]);
-};
 
 /* DOWNLOAD IMAGE */
 function downloadDiary() {
