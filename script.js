@@ -29,7 +29,6 @@ const classGroups = [
       { key: "science", label: "Science", placeholder: "Write homework details" },
       { key: "islamiat", label: "اسلامیات", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
       { key: "social-study", label: "Social Study", placeholder: "Write homework details" },
-      { key: "gk", label: "General Knowledge", placeholder: "Write homework details" }
     ]
   },
   {
@@ -42,8 +41,7 @@ const classGroups = [
       { key: "science", label: "Science", placeholder: "Write homework details" },
       { key: "islamiat", label: "اسلامیات", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
       { key: "social-study", label: "Social Study", placeholder: "Write homework details" },
-      { key: "gk", label: "General Knowledge", placeholder: "Write homework details" }
-    ]
+      ]
   },
   {
     id: "three",
@@ -55,8 +53,7 @@ const classGroups = [
       { key: "science", label: "Science", placeholder: "Write homework details" },
       { key: "islamiat", label: "اسلامیات", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
       { key: "social-study", label: "Social Study", placeholder: "Write homework details" },
-      { key: "gk", label: "General Knowledge", placeholder: "Write homework details" }
-    ]
+      ]
   },
   {
     id: "four",
@@ -68,8 +65,7 @@ const classGroups = [
       { key: "science", label: "Science", placeholder: "Write homework details" },
       { key: "islamiat", label: "اسلامیات", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
       { key: "social-study", label: "Social Study", placeholder: "Write homework details" },
-      { key: "gk", label: "General Knowledge", placeholder: "Write homework details" }
-    ]
+      ]
   },
   {
     id: "five",
