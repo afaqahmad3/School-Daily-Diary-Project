@@ -2,83 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Peace Education System</title>
-
-  <!-- Image Export Library -->
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1f74b7">
+  <meta name="description" content="Create a polished daily homework diary for Peace School System.">
+  <title>Peace School Diary</title>
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="page-glow page-glow-left" aria-hidden="true"></div>
+  <div class="page-glow page-glow-right" aria-hidden="true"></div>
 
-<div class="container">
+  <main class="site-shell">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <p class="eyebrow">Peace School System</p>
+        <h1>Daily Homework Diary</h1>
+        <p class="hero-text">A refined homework website for building clean, elegant daily diaries for every class.</p>
+      </div>
+    </section>
 
-  <div class="input-box">
-    <h2>Daily Homework Diary</h2>
+    <div class="content-grid">
+      <section class="editor-panel" aria-labelledby="editorTitle">
+        <div class="panel-heading">
+          <p class="eyebrow">Class Selection</p>
+          <h2 id="editorTitle">Generate Today's Diary</h2>
+          <p class="panel-text">Tap a class below and the subject list will change automatically.</p>
+        </div>
 
-    <label>Class</label>
-    <input type="text" id="classInput" placeholder="e.g. Class 5-A">
+        <div id="classButtons" class="class-buttons" aria-label="Class options"></div>
 
-    <label>English</label><input type="text" id="engInput">
-    <label>Math</label><input type="text" id="mathInput">
-    <label>Science</label><input type="text" id="sciInput">
-    <label>General Knowledge</label><input type="text" id="gkInput">
-    <label>Social Studies</label><input type="text" id="sstInput">
-    <label>اردو</label><input type="text" id="urduInput">
-    <label>اسلامیات</label><input type="text" id="islInput">
+        <form id="diaryForm" class="diary-form">
+          <label class="field">
+            <span>Selected Class</span>
+            <input type="text" id="classInput" readonly>
+          </label>
 
-    <label>Notes & Reminders</label>
-    <textarea id="notesInput"></textarea>
+          <div id="subjectFields" class="subject-fields" aria-live="polite"></div>
 
-    <button onclick="generateDiary()">Generate Diary</button>
-    <button onclick="downloadDiary()">Download</button>
+          <label class="field notes-field">
+            <span>Notifications and Reminders</span>
+            <textarea id="notesInput" class="urdu-input" rows="4" placeholder="اہم اعلان، ٹیسٹ، ہوم ورک یا یاددہانی لکھیں"></textarea>
+          </label>
 
-  </div>
+          <div class="actions">
+            <button type="submit" class="primary-action">Generate Diary</button>
+            <button type="button" id="downloadBtn" class="secondary-action">Download PNG</button>
+            <button type="button" id="clearBtn" class="ghost-action">Clear</button>
+          </div>
+        </form>
+      </section>
 
-  <div class="diary" id="diary">
+      <section class="preview-panel" aria-label="Diary preview">
+        <article class="diary" id="diary">
+          <header class="school-header">
+            <img src="logo.png" alt="Peace School System logo">
+            <div>
+              <h2>PEACE School System</h2>
+              <p class="tagline">Ocean of Knowledge</p>
+              <p class="contact">0323-7609572 | 0315-2739918</p>
+            </div>
+          </header>
 
-    <div class="school-header">
-      <img src="image\logo.png">
-      <h1>PEACE School System</h1>
-      <h3>Ocean of Knowledge</h3>
-      <p>0323-7609572 | 0315-2739918</p>
+          <div class="diary-title">Daily Homework Diary</div>
+
+          <div class="info-row">
+            <div class="info-item">
+              <strong>Class:</strong>
+              <span id="classOut">-</span>
+            </div>
+            <div class="info-item info-item-center">
+              <strong>Day:</strong>
+              <span id="day">-</span>
+            </div>
+            <div class="info-item info-item-right">
+              <strong>Date:</strong>
+              <span id="date">-</span>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Homework</th>
+              </tr>
+            </thead>
+            <tbody id="subjectsTableBody"></tbody>
+          </table>
+
+          <section class="notes">
+            <strong>Notes & Reminders</strong>
+            <p id="notes" class="urdu">-</p>
+          </section>
+        </article>
+      </section>
     </div>
-
-    <hr>
-
-    <!-- TITLE -->
-    <div class="diary-title">Daily Homework Diary</div>
-
-    <!-- INFO ROW -->
-    <div class="info-row">
-      <span><b>Class:</b> <span id="classOut"></span></span>
-      <span><b>Day:</b> <span id="day"></span></span>
-      <span><b>Date:</b> <span id="date"></span></span>
-    </div>
-
-    <!-- TABLE -->
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Homework</th>
-      </tr>
-      <tr><td>English</td><td id="eng"></td></tr>
-      <tr><td>Math</td><td id="math"></td></tr>
-      <tr><td>Science</td><td id="sci"></td></tr>
-      <tr><td>General Knowledge</td><td id="gk"></td></tr>
-      <tr><td>Social Studies</td><td id="sst"></td></tr>
-      <tr><td class="urdu">اردو</td><td class="urdu" id="urdu"></td></tr>
-      <tr><td class="urdu">اسلامیات</td><td class="urdu" id="isl"></td></tr>
-    </table>
-
-    <!-- NOTES -->
-    <div class="notes">
-      <b>Notes & Reminders</b>
-      <p id="notes"></p>
-    </div>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  </main>
 </body>
 </html>
