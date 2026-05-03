@@ -80,7 +80,7 @@ const classGroups = [
       { key: "urdu", label: "اردو", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
       { key: "science", label: "Science", placeholder: "Write homework details" },
       { key: "islamiat", label: "اسلامیات", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true },
-      { key: "social-study", label: "سوشل اسٹڈی", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true }
+      { key: "social-study", label: "معاشرتی علوم", placeholder: "ہوم ورک کی تفصیل لکھیں", urdu: true }
     ]
   },
   {
